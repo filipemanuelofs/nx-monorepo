@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "react-vs-angular--react": "apps/react-vs-angular--react",
+    "react-vs-angular--react-e2e": "apps/react-vs-angular--react-e2e"
+  }
+}

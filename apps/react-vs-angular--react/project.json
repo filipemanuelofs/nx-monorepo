@@ -1,0 +1,74 @@
+{
+  "root": "apps/react-vs-angular--react",
+  "sourceRoot": "apps/react-vs-angular--react/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/react-vs-angular--react",
+        "index": "apps/react-vs-angular--react/src/index.html",
+        "baseHref": "/",
+        "main": "apps/react-vs-angular--react/src/main.tsx",
+        "polyfills": "apps/react-vs-angular--react/src/polyfills.ts",
+        "tsConfig": "apps/react-vs-angular--react/tsconfig.app.json",
+        "assets": [
+          "apps/react-vs-angular--react/src/favicon.ico",
+          "apps/react-vs-angular--react/src/assets"
+        ],
+        "styles": ["apps/react-vs-angular--react/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/react-vs-angular--react/src/environments/environment.ts",
+              "with": "apps/react-vs-angular--react/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "react-vs-angular--react:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "react-vs-angular--react:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/react-vs-angular--react/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/react-vs-angular--react"],
+      "options": {
+        "jestConfig": "apps/react-vs-angular--react/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
