@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/react-vs-angular-angular",
+  "sourceRoot": "apps/react-vs-angular-angular/src",
+  "prefix": "hypeit-brasil",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/react-vs-angular-angular",
+        "index": "apps/react-vs-angular-angular/src/index.html",
+        "main": "apps/react-vs-angular-angular/src/main.ts",
+        "polyfills": "apps/react-vs-angular-angular/src/polyfills.ts",
+        "tsConfig": "apps/react-vs-angular-angular/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/react-vs-angular-angular/src/favicon.ico",
+          "apps/react-vs-angular-angular/src/assets"
+        ],
+        "styles": ["apps/react-vs-angular-angular/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/react-vs-angular-angular/src/environments/environment.ts",
+              "with": "apps/react-vs-angular-angular/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "react-vs-angular-angular:build:production"
+        },
+        "development": {
+          "browserTarget": "react-vs-angular-angular:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "react-vs-angular-angular:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/react-vs-angular-angular/src/**/*.ts",
+          "apps/react-vs-angular-angular/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/react-vs-angular-angular"],
+      "options": {
+        "jestConfig": "apps/react-vs-angular-angular/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

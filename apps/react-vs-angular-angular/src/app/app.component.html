@@ -1,0 +1,8 @@
+<h1>Estados brasileiros</h1>
+<input [(ngModel)]="pesquisa" type="text" name="" id="">
+
+<ul>
+  <li *ngFor="let estado of estadosFiltrados">
+    {{ estado.nome }}
+  </li>
+</ul>
