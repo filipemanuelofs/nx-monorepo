@@ -2,6 +2,9 @@
   "version": 2,
   "projects": {
     "ibge-api": "libs/ibge-api",
+    "ngrx-mock-api": "libs/ngrx-mock-api",
+    "ngrx-selectors-tutorial": "apps/ngrx-selectors-tutorial",
+    "ngrx-selectors-tutorial-e2e": "apps/ngrx-selectors-tutorial-e2e",
     "react-vs-angular--react": "apps/react-vs-angular--react",
     "react-vs-angular--react-e2e": "apps/react-vs-angular--react-e2e",
     "react-vs-angular-angular": "apps/react-vs-angular-angular",

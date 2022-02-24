@@ -1,0 +1,28 @@
+{
+  "root": "apps/ngrx-selectors-tutorial-e2e",
+  "sourceRoot": "apps/ngrx-selectors-tutorial-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ngrx-selectors-tutorial-e2e/cypress.json",
+        "devServerTarget": "ngrx-selectors-tutorial:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ngrx-selectors-tutorial:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ngrx-selectors-tutorial-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ngrx-selectors-tutorial"]
+}

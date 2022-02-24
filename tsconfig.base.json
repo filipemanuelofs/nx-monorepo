@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hypeit-brasil/ibge-api": ["libs/ibge-api/src/index.ts"]
+      "@hypeit-brasil/ibge-api": ["libs/ibge-api/src/index.ts"],
+      "@hypeit-brasil/ngrx-mock-api": ["libs/ngrx-mock-api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

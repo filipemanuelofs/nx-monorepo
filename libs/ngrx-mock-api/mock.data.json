@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Carlito"
+    }
+  ],
+  "companies": [
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "Fábrica do carlito"
+    }
+  ],
+  "trucks": [
+    {
+      "id": 7,
+      "companyId": 3,
+      "brand": "Scania"
+    },
+    {
+      "id": 31,
+      "companyId": 3,
+      "brand": "Mercedes"
+    }
+  ]
+}

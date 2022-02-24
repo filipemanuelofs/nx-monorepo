@@ -1,0 +1,36 @@
+{
+  "projectType": "library",
+  "root": "libs/ngrx-mock-api",
+  "sourceRoot": "libs/ngrx-mock-api/src",
+  "prefix": "hypeit-brasil",
+  "targets": {
+    "start": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx json-server --watch libs/ngrx-mock-api/mock.data.json"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ngrx-mock-api"],
+      "options": {
+        "jestConfig": "libs/ngrx-mock-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ngrx-mock-api/src/**/*.ts",
+          "libs/ngrx-mock-api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

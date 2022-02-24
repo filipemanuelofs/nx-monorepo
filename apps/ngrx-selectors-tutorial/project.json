@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/ngrx-selectors-tutorial",
+  "sourceRoot": "apps/ngrx-selectors-tutorial/src",
+  "prefix": "hypeit-brasil",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ngrx-selectors-tutorial",
+        "index": "apps/ngrx-selectors-tutorial/src/index.html",
+        "main": "apps/ngrx-selectors-tutorial/src/main.ts",
+        "polyfills": "apps/ngrx-selectors-tutorial/src/polyfills.ts",
+        "tsConfig": "apps/ngrx-selectors-tutorial/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/ngrx-selectors-tutorial/src/favicon.ico",
+          "apps/ngrx-selectors-tutorial/src/assets"
+        ],
+        "styles": ["apps/ngrx-selectors-tutorial/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ngrx-selectors-tutorial/src/environments/environment.ts",
+              "with": "apps/ngrx-selectors-tutorial/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ngrx-selectors-tutorial:build:production"
+        },
+        "development": {
+          "browserTarget": "ngrx-selectors-tutorial:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ngrx-selectors-tutorial:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/ngrx-selectors-tutorial/src/**/*.ts",
+          "apps/ngrx-selectors-tutorial/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ngrx-selectors-tutorial"],
+      "options": {
+        "jestConfig": "apps/ngrx-selectors-tutorial/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
