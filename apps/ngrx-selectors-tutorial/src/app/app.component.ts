@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as Actions from './store/app.actions';
 import { State } from './store/app.reducer';
+import { selectCompaniesWithTrucks, selectFirstUserName } from './store/app.selectors';
 import { Company, Truck, User } from './store/models';
 
 
@@ -17,6 +18,10 @@ export class AppComponent {
     private readonly http: HttpClient,
     private readonly store: Store<{ app: State }>
   ) { }
+
+  firstUserName$ = this.store.select(selectFirstUserName)
+
+  firstUserCompanies$ = this.store.select(selectCompaniesWithTrucks)
 
   ngOnInit(): void {
     this.http.get<User[]>('http://localhost:3000/users').subscribe({

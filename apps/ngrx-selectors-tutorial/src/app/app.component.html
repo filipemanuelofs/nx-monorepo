@@ -1,0 +1,13 @@
+<h1>Seja bem vindo {{ firstUserName$ | async }}</h1>
+
+<h2>Empresas</h2>
+
+<ul>
+  <li *ngFor="let company of firstUserCompanies$ | async">
+    {{ company.name }}
+    <p>caminhoes: </p>
+    <ul>
+      <li *ngFor="let truck of company.trucks">{{ truck.id }} - {{ truck.brand}}</li>
+    </ul>
+  </li>
+</ul>
